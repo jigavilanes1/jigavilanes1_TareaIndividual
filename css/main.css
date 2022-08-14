@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body{
+   font-family: 'Open Sans', 'sans serif';
+   background-image: url(Imagenes/fondo.jpg) ;
+   background-size: cover;
+}
+.navbar-nav>li>.dropdown-menu{
+   margin-top: 20px;
+   border-top-left-radius:4px ;
+   border-top-right-radius:4px ;
+}
+.mega-dropdown{
+   position: static;
+   width: 100%;
+}
+.mega-dropdown-menu{
+   padding: 10px 10px;
+   width: 100%;
+   box-shadow: none;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../../css/iconmoon.css">
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<title>Pregunta 3</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body style="background-image: url(http://1.bp.blogspot.com/-A_4RlMQz4wA/UJbAoCJ9ofI/AAAAAAAAHG0/htCJgQC58ow/s1600/Fondo%2Bpara%2Bwallpaper.jpg) ;background-size: cover;"data-spy="scroll" data-target="#scrollspy" data-offset="1">
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="scrollspy" style="z-index: 1;">
+    <div class="container-fluid" class="col-sm-12 col-md-12 col-lg-12">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="../../index.html" class="navbar-brand">Tarea Individual</a>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+          <li><a href="#"></a></li>
+          <li><a href="../PREGUNTA_1/index.html">Pregunta 1</a></li>
+          <li><a href="../PREGUNTA_2/index.html">Pregunta 2</a></li>
+          <li><a href="../PREGUNTA_3/index.html">Pregunta 3</a></li>
+          <li><a href="../PREGUNTA_4/index.html">Pregunta 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>	
+  <div class="container">
+		<h2>Pregunta 1</h2>
+		<ul class="nav nav-tabs">
+			<li><a href="../../index.html">Menu Principal</a></li>
+			<li class="active"><a href="#Eje" data-toggle="tab">Ejecución</a></li>
+			<li><a href="#Capt" data-toggle="tab">Video Referencia</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="Eje" style="text-align:center;">
+				<div style="padding-top: 10%;background-image:url(../../Imagenes/fondo.jpg) ;background-size: cover;">
+					<br>	
+					<img src="../../Imagenes/selloespe.jpg" width="65%" align="center">
+					<h1 style="text-align: center;">Pregunta 4</h1>
+      <p>4)Mostrar datos XML en una tabla utilizando AJAX.</p>
+      <div class="section" id="enunciado"  style="text-align:center;">
+      <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Tabla</button>
+      </div>
+      <div class="section" >
+        <table id="resolucion"></table>
+      </div>
+        <br>
+					
+				</div>
+			</div>
+			<div class="tab-pane" id="Capt" >
+				<iframe style="margin-top: 50px;" width="100%" height="500" src="https://www.youtube.com/embed/jUqNGiP2rCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+function change_myselect(sel) {
+  var obj, dbParam, xmlhttp, myObj, x, txt = "";
+  obj = { table: sel, limit: 20 };
+  dbParam = JSON.stringify(obj);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      txt += "<table border='2'><tr><td>NOMBRE</td><td>PROTAGONISTA</td></tr>";
+      
+      for (x in myObj.peliculas) {
+        if(myObj.peliculas[x].Genero==sel){
+          txt += "<tr><td>" + myObj.peliculas[x].Nombre + "</td><td>"+myObj.peliculas[x].Protagonista+"</td></tr>";
+        }
+  }
+      txt += "</table>"    
+      document.getElementById("demo").innerHTML = txt;
+      }
+    };
+  xmlhttp.open("GET", "./ListaPeliculas.json", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+}
+</script>
+<script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="../../js/vendor/bootstrap.min.js"></script>
+      <script src="../../js/main.js"></script> 
+
+</body>
+</html>
+
+
+
+
+
+
+
+        
+     

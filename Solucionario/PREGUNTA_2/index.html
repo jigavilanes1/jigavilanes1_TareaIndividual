@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../../css/iconmoon.css">
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<title>Pregunta 2</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body style="background-image: url(http://1.bp.blogspot.com/-A_4RlMQz4wA/UJbAoCJ9ofI/AAAAAAAAHG0/htCJgQC58ow/s1600/Fondo%2Bpara%2Bwallpaper.jpg) ;background-size: cover;"data-spy="scroll" data-target="#scrollspy" data-offset="1">
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="scrollspy" style="z-index: 1;">
+    <div class="container-fluid" class="col-sm-12 col-md-12 col-lg-12">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="../../index.html" class="navbar-brand">Tarea Individual</a>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+          <li><a href="#"></a></li>
+          <li><a href="../PREGUNTA_1/index.html">Pregunta 1</a></li>
+          <li><a href="../PREGUNTA_2/index.html">Pregunta 2</a></li>
+          <li><a href="../PREGUNTA_3/index.html">Pregunta 3</a></li>
+          <li><a href="../PREGUNTA_4/index.html">Pregunta 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>	
+  <div class="container">
+		<h2>Pregunta 1</h2>
+		<ul class="nav nav-tabs">
+			<li><a href="../../index.html">Menu Principal</a></li>
+			<li class="active"><a href="#Eje" data-toggle="tab">Ejecución</a></li>
+			<li><a href="#Capt" data-toggle="tab">Video Referencia</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="Eje" style="text-align:center;">
+				<div style="padding-top: 10%;background-image:url(../../Imagenes/fondo.jpg) ;background-size: cover;">
+					<br>	
+					<img src="../../Imagenes/selloespe.jpg" width="65%" align="center">
+					<h1>Pregunta 2</h1>
+					<p>2)Mediante un archivo XML, analizar dicho archivo XML utilizando el siguiente Script:</p>
+      <ul style="list-style-type: none;">
+        <li>xmlhttp = new XMLHttpRequest();<br>
+          xmlhttp.open("GET", "ejemplo.xml", false);<br>
+          xmlhttp.send();<br>
+          xmlDoc = xmlhttp.responseXML;<br>
+        </li>
+      </ul>
+      <div class="section" id="enunciado" >
+        <button  type="button" onclick="CargarDatos()">Obtener Datos</button>
+        </div>
+        <div class="section" id="resolucion" >
+        </div>
+        <div class="section" >
+        </div>
+        <br>
+					
+				</div>
+			</div>
+			<div class="tab-pane" id="Capt" >
+				<iframe style="margin-top: 50px;" width="100%" height="500" src="https://www.youtube.com/embed/_Sv4cHk9QV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+  xmlhttp = new XMLHttpRequest(); //Creacion del objeto XMLHttpRequest
+  xmlhttp.open("GET", "ejemplo.xml", false);//Enviar la solicitud para obtener el archivo ejemplo.xml
+  xmlhttp.send();
+  xmlDoc = xmlhttp.responseXML;//Funcion que va a ser llamada cuando la solicitud reciba una respuesta
+  //Funcion para recuperar los datos del txt
+  function CargarDatos() {
+    document.getElementById("resolucion").innerHTML = '';
+    const n = xmlDoc.getElementsByTagName("nombre");
+    for (var i = 0; i < n.length; i++) {
+      document.getElementById("resolucion").innerHTML += xmlDoc.getElementsByTagName("nombre")[i].childNodes[0].nodeValue+" come "+xmlDoc.getElementsByTagName("comida")[i].childNodes[0].nodeValue+"<br>";
+    }
+  }
+</script>
+<script>
+  var parser, xmlDoc;
+  //la cadena de texto muestra marca, modelo y estado
+  var text = 	
+  "<tienda><celular><marca>Samsung</marca><modelo>A30</modelo><estado>nuevo</estado></celular><celular><marca>iPhone</marca><modelo>XII</modelo><estado>Usado</estado></celular></tienda>";
+  parser = new DOMParser();
+  xmlDoc = parser.parseFromString(text,"text/xml");
+  function traerMarcar1(){
+    document.getElementById("p1").innerHTML = xmlDoc.getElementsByTagName("marca")[0].childNodes[0].nodeValue;
+  }
+  function traerMarcar2(){
+    document.getElementById("p1").innerHTML = xmlDoc.getElementsByTagName("marca")[1].childNodes[0].nodeValue;
+
+  }
+</script>
+<script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="../../js/vendor/bootstrap.min.js"></script>
+      <script src="../../js/main.js"></script> 
+
+</body>
+</html>
